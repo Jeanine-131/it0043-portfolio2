@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Contact Information</title>
+
+    <style>
+        body {
+            background-color: #fcd3f2; 
+            font-family: "Comic Sans MS", "Arial Rounded MT Bold", Arial, sans-serif; 
+            text-align: center; 
+            border: 4px solid #99106b; 
+            border-radius: 20px;
+            margin: 20px;
+            padding: 20px;
+        }
+
+        header {
+            background-color: rgb(253, 240, 240);
+            padding: 30px;
+        }
+        h1 {
+            color: #c2185b;
+        }
+
+        header h1 {
+            font-size: 60px;
+        }
+        h2 {
+            color: #d94f8a;
+        }
+        h3 {
+            color: #a83d6d;
+        }
+        p {
+            color: #5a2a42;
+        }
+        nav {
+            padding: 15px;
+        }
+        nav a {
+            margin: 10px;
+            color: #a30f4a;
+        }
+        section {
+            background-color: white;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        form {
+           width: 80%;
+              margin: auto;
+                text-align: left;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #a30f4a;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #99106b;
+            border-radius: 12px;
+            box-sizing: border-box;
+
+        }
+        button {
+            background-color: #e7025e;
+            color: white;
+            padding: 10px 20px;
+            border: 3px solid #99106b;
+            border-radius: 12px;
+            cursor: pointer;
+            margin-top: 15px;
+            font-weight: bold;
+            font-family: "Comic Sans MS", "Arial Rounded MT Bold", Arial, sans-serif;
+        }
+        footer {
+            background-color: rgb(253, 240, 240);
+            padding: 20px;
+        }
+        footer a {
+            color: #a30f4a;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>
+            Contact Me!
+        </h1>
+        <p> Feel free to reach out to me!</p>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="skills.html">Skills</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <main>
+        <section>
+            <h2>Contact Form</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+    </main>
+    <footer>
+        <p> My Portfolio &copy; 2026</p>
+        <p> Created by Jeanine Elise S. Calara</p>
+        <a href="contact.html">Contact Me</a>
+</body>
+</html>
