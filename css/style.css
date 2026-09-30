@@ -18,7 +18,7 @@
     --color-header: #fdf0f0;
     --color-table: #ffe6f0;
     --color-table-light: #fff5fa;
-    --color-button: #e6196b;
+    --color-button: #88063a;
 
     /*type scale*/
     --text-xs: 0.75rem;
@@ -28,7 +28,7 @@
     --text-title: 60px;
     --text-body:20px;
 
-    /*spacing roles*/
+    /*spacing scales*/
     --space-1: 5px;
     --space-2: 10px;
     --space-3: 15px;
