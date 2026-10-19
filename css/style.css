@@ -475,4 +475,47 @@ body.dark-theme .theme-toggle:focus {
     color: #ffffff;
 }
 
+#dynamic-content article {
+    margin-bottom: 20px;
+}
 
+#dynamic-content img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+    border-radius: 8px;
+}
+
+/* Contact form validation messages */
+.field-error {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    color: #b00020;
+    text-align: left;
+    font-size: var(--text-sm);
+}
+
+input[aria-invalid="true"],
+textarea[aria-invalid="true"] {
+    border-color: #b00020;
+}
+
+#form-success {
+    color: #176b32;
+    font-weight: bold;
+}
+
+body.dark-theme .field-error {
+    color: #ff91a4;
+}
+
+body.dark-theme input[aria-invalid="true"],
+body.dark-theme textarea[aria-invalid="true"] {
+    border-color: #ff91a4;
+}
+
+body.dark-theme #form-success {
+    color: #9af0b0;
+}
