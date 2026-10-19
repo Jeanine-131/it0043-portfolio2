@@ -117,19 +117,33 @@ nav {
     
 }
 
+.nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+}
+
+
 nav a {
     color: var(--color);
     text-decoration: none;
     margin: 0 var(--space-2);
     padding: var(--space-2) var(--space-3);
     font-weight: bold;
-
     transition: color 0.2s ease, background-color 0.2s ease;
 }
 nav a:hover,
 nav a:focus {
     color: var(--color-hover);
 }
+
+/* Hide the menu button on larger screens */
+.menu-toggle {
+    display: none;
+}
+
 
 /*Reusable components*/
 
@@ -247,7 +261,24 @@ th, td {
     nav {
         flex-direction: column;
         align-items: center;
+        gap: var(--space-2);
     }
+
+    .menu-toggle {
+        display: block;
+    }
+
+     .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+       
+    .nav-links.nav-open {
+        display: flex;
+    }
+        
 
     nav a {
         width: 100%;
