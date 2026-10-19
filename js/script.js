@@ -17,3 +17,30 @@ if (menuToggle && navLinks) {
         }
     });
 }
+
+/*
+ * Allows users to switch between the regular theme
+ * and dark theme for a more comfortable viewing experience.
+ */
+
+const themeToggle = document.querySelector('.theme-toggle');
+
+if (themeToggle) {
+    // Set the button label based on the current theme.
+    if (document.body.classList.contains('dark-theme')) {
+        themeToggle.textContent = 'Light Mode';
+    } else {
+        themeToggle.textContent = 'Dark Mode';
+    }
+
+    // Switch themes when the button is clicked.
+    themeToggle.addEventListener('click', function () {
+        document.body.classList.toggle('dark-theme');
+
+        if (document.body.classList.contains('dark-theme')) {
+            themeToggle.textContent = 'Light Mode';
+        } else {
+            themeToggle.textContent = 'Dark Mode';
+        }
+    });
+}
