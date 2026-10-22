@@ -7,6 +7,7 @@ const menuToggle = document.querySelector('.menu-toggle');
 const navLinks = document.querySelector('.nav-links');
 
 if (menuToggle && navLinks) {
+    //  Provides quick access to mobile navigation
     menuToggle.addEventListener('click', function () {
        if (navLinks.classList.contains("nav-open")) {
             navLinks.classList.remove('nav-open');
@@ -33,7 +34,7 @@ if (themeToggle) {
         themeToggle.textContent = 'Dark Mode';
     }
 
-    // Switch themes when the button is clicked.
+    // Allows users to customize the page theme for maximum viewing comfort.
     themeToggle.addEventListener('click', function () {
         document.body.classList.toggle('dark-theme');
 
@@ -69,6 +70,7 @@ if (contentContainer) {
     if (portfolioItems.length === 0) {
         contentContainer.textContent = 'No portfolio items available.';
     } else {
+        // Renders complete portfolio items and skips unresolved entries.
         portfolioItems.forEach(function (item) {
             if (item.title && item.description && item.image) {
                 const article = document.createElement('article');
@@ -120,6 +122,7 @@ function handleContactSubmit(event) {
     let isValid = true;
 
     // Clear previous errors and success messages.
+    // Each field's error element uses the field ID followed by "-error".
     fields.forEach(function (field) {
         document.querySelector(`#${field.id}-error`).textContent = '';
         field.setAttribute('aria-invalid', 'false');
@@ -170,6 +173,8 @@ function handleContactSubmit(event) {
     // Show success only when every field is valid.
     if (isValid) {
         successMessage.hidden = false;
+
+        // Reset the form inputs after once validation passes. 
         contactForm.reset();
     }
 }

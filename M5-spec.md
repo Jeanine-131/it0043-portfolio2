@@ -8,7 +8,7 @@ Expected DOM Change
 
 Edge Cases
 1. The user clicks the button twice.
-2. The user resizes the screen.
+2. The user resizes the screen, and the responsive CSS adjusts the navigation menu's layout.
 3. The button is missing.
 
 PSEUDOCODE
@@ -74,24 +74,23 @@ Edge Cases
 
 PSEUDOCODE
 
-1. CREATE an array of objects, each containing a title, description, and image. 
-2. FIND the container where the items will display. 
-3. IF the container exists THEN 
-  3.1. IF  the array is empty THEN 
-   3.1.1. DISPLAY a message that says there are no items. 
-  3.2. ELSE
-   3.2.1. USE an array method, such as forEach(), to process each item.
-   3.2.2. FOR EACH item in the array:
-    3.2.2.1. IF the item has a title, description, and image THEN
-    - CREATE an element for the item.
-    - ADD the item's title, description, and image to the element.
-    - APPEND the element to the container.
-    3.2.2.2. ELSE
-    - SKIP the incomplete item.
-    3.2.2.3. END IF
-    3.2.3. END FOR
-    3.3. END IF
- 4. END IF
+1. CREATE an array of objects, each containing a title, description, and image.
+2. FIND the container where the items will display.
+3. IF the container exists THEN:
+3.1. IF the array is empty THEN:
+3.1.1. DISPLAY a message saying there are no items.
+3.2. ELSE:
+3.2.1. FOR EACH item in the array using forEach():
+3.2.1.1. IF the item has a title, description, and image THEN:
+- CREATE an element for the item.
+- ADD the item's title, description, and image to the element.
+- APPEND the element to the container.
+3.2.1.2. ELSE:
+- SKIP the incomplete item.
+3.2.1.3. END IF
+3.2.2. END FOR
+3.3. END IF
+4. END IF
 
  FEATURE 4: Contact Form Validation
 
@@ -117,13 +116,13 @@ PSEUDOCODE
    1.3. CLEAR the previous success message.
    1.4. CONTINUE validating every new submission independently; do not leave an old success message visible during a new validation attempt.
    1.5. READ the name, email, phone, subject, and message values.
-   1.6. REMOVE extra spaces from the beginning and end of each value.
+   1.6. TRIM whitespace from the beginning and end of each value
    1.7. SET 'isValid' to 'true'. 
    1.8. IF the name is blank THEN
     1.8.1. DISPLAY an error beside the name field.
     1.8.2. SET 'isValid' to 'false'.
    1.8.3. END IF 
-   1.9. IF the email field is blank or invalid THEN
+   1.9. IF the email field is blank or has an invalid format THEN
     1.9.1. DISPLAY an error beside the email field. 
     1.9.2. SET 'isValid' to 'false'.
    1.9.3. END IF
@@ -131,14 +130,19 @@ PSEUDOCODE
     1.10.1. DISPLAY an error beside the phone field.
     1.10.2. SET 'isValid' to 'false'. 
    1.10.3. END IF 
-   1.11. IF the message field is blank THEN
-    1.11.1. DISPLAY an error beside the message field.
-    1.11.2. SET 'isValid' to 'false'. 
-   1.11.3. END IF 
-   1.12. IF 'isValid' is 'true' THEN
-    1.12.1. DISPLAY a message saying the form is valid.
-    1.12.2. CLEAR the form fields.
-   1.13. END IF    
+
+   1.11. IF the subject field is blank THEN
+    1.11.1. DISPLAY an error beside the subject field.
+    1.11.2. SET 'isValid' to 'false'.
+    1.11.3. END IF
+   1.12. IF the message field is blank THEN
+    1.12.1. DISPLAY an error beside the message field.
+    1.12.2. SET 'isValid' to 'false'. 
+   1.12.3. END IF 
+   1.13. IF 'isValid' is 'true' THEN
+    1.13.1. DISPLAY a message saying the form is valid.
+    1.13.2. CLEAR the form fields.
+   1.14. END IF    
 
 
 
