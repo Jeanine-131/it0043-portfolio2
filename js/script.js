@@ -1,5 +1,5 @@
 /* 
- * Controls the mobile navigation menu so users can
+ * this controls the mobile navigation menu so users can
 * open and close the links with the menu button.
 */
 
@@ -7,7 +7,7 @@ const menuToggle = document.querySelector('.menu-toggle');
 const navLinks = document.querySelector('.nav-links');
 
 if (menuToggle && navLinks) {
-    //  Provides quick access to mobile navigation
+    //  it prrovides quick access to mobile navigation
     menuToggle.addEventListener('click', function () {
        if (navLinks.classList.contains("nav-open")) {
             navLinks.classList.remove('nav-open');
@@ -20,7 +20,7 @@ if (menuToggle && navLinks) {
 }
 
 /*
- * Allows users to switch between the regular theme
+ * this allows users to switch between the regular theme
  * and dark theme, saving their preference in Local Storage.
  */
 
@@ -69,7 +69,7 @@ function updateThemeButton() {
 
 updateThemeButton();
 /*
- * Saves the visitor's name in the existing settings object.
+ * this saves the visitor's name in the existing settings object.
  */
 const visitorNameInput = document.querySelector('#visitor-name');
 const saveNameButton = document.querySelector('#save-name');
@@ -132,7 +132,7 @@ if (themeToggle) {
     });
 }
 /*
- * Displays portfolio content from an array so items can
+ * Dthis displays portfolio content from an array so items can
  * be added or changed without hardcoding each item in HTML.
  */
 
@@ -155,7 +155,7 @@ if (contentContainer) {
     if (portfolioItems.length === 0) {
         contentContainer.textContent = 'No portfolio items available.';
     } else {
-        // Renders complete portfolio items and skips unresolved entries.
+        // this renders complete portfolio items and skips unresolved entries.
         portfolioItems.forEach(function (item) {
             if (item.title && item.description && item.image) {
                 const article = document.createElement('article');
@@ -178,13 +178,13 @@ if (contentContainer) {
     }
 }
 /*
- * Validates the contact form and displays an error
+ * this validates the contact form and displays an error
  * beside each field that needs to be corrected.
  */
 
 const contactForm = document.querySelector('#contact-form');
 
-// Displays a field-specific error and marks the field invalid.
+// this displays a field-specific error and marks the field invalid.
 function showFieldError(field, message) {
     const errorElement = document.querySelector(`#${field.id}-error`);
 
@@ -192,7 +192,7 @@ function showFieldError(field, message) {
     field.setAttribute('aria-invalid', 'true');
 }
 
-// Validates the form whenever the user submits it.
+// this validates the form whenever the user submits it.
 function handleContactSubmit(event) {
     event.preventDefault();
 
@@ -206,8 +206,8 @@ function handleContactSubmit(event) {
     const fields = [name, email, phone, subject, message];
     let isValid = true;
 
-    // Clear previous errors and success messages.
-    // Each field's error element uses the field ID followed by "-error".
+    // this clear previous errors and success messages.
+    // each field's error element uses the field ID followed by "-error".
     fields.forEach(function (field) {
         document.querySelector(`#${field.id}-error`).textContent = '';
         field.setAttribute('aria-invalid', 'false');
@@ -215,20 +215,20 @@ function handleContactSubmit(event) {
 
     successMessage.hidden = true;
 
-    // Read the values and remove surrounding whitespace.
+    // read the values and remove surrounding whitespace.
     const nameValue = name.value.trim();
     const emailValue = email.value.trim();
     const phoneValue = phone.value.trim();
     const subjectValue = subject.value.trim();
     const messageValue = message.value.trim();
 
-    // Validate the name.
+    // name validation
     if (nameValue === '') {
         showFieldError(name, 'Please enter your name.');
         isValid = false;
     }
 
-    // Validate the email.
+    // email validation
     if (emailValue === '') {
       showFieldError(email, 'Please enter your email address.');
       isValid = false;
@@ -237,41 +237,41 @@ function handleContactSubmit(event) {
       isValid = false;
     }
 
-    // Validate the phone number.
+    // phone no. validation
     if (phoneValue === '') {
         showFieldError(phone, 'Please enter your phone number.');
         isValid = false;
     }
 
-    // Validate the subject.
+    // subject validation
     if (subjectValue === '') {
         showFieldError(subject, 'Please enter a subject.');
         isValid = false;
     }
 
-    // Validate the message.
+    // message validation
     if (messageValue === '') {
         showFieldError(message, 'Please enter your message.');
         isValid = false;
     }
 
-    // Show success only when every field is valid.
+    // this displays success only when every field is valid
     if (isValid) {
         successMessage.hidden = false;
 
-        // Reset the form inputs after once validation passes. 
+        // this reset the form inputs after once validation passes. 
         contactForm.reset();
     }
 }
 
-// Add the submit listener only if the form exists on this page.
+// this add the submit listener only if the form exists on this page.
 if (contactForm) {
     contactForm.addEventListener('submit', handleContactSubmit);
 }
 
 
 /*
- * Records the most recent visit in the saved settings.
+ * records the most recent visit.
  */
 
 const lastVisitElement = document.querySelector('#last-visit');
