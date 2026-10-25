@@ -230,11 +230,11 @@ function handleContactSubmit(event) {
 
     // Validate the email.
     if (emailValue === '') {
-        showFieldError(email, 'Please enter your email address.');
-        isValid = false;
+      showFieldError(email, 'Please enter your email address.');
+      isValid = false;
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue)) {
-        showFieldError(email, 'Please enter a valid email address.');
-        isValid = false;
+      showFieldError(email, 'Please enter a valid email address.');
+      isValid = false;
     }
 
     // Validate the phone number.
@@ -273,6 +273,23 @@ if (contactForm) {
 /*
  * Records the most recent visit in the saved settings.
  */
+
+const lastVisitElement = document.querySelector('#last-visit');
+
+if (lastVisitElement) {
+    if (settings.lastVisit) {
+        const lastVisitDate = new Date(settings.lastVisit);
+
+        if (!Number.isNaN(lastVisitDate.getTime())) {
+            lastVisitElement.textContent =
+                `Your last visit: ${lastVisitDate.toLocaleString()}`;
+        } else {
+            lastVisitElement.textContent = 'This is your first visit!';
+        }
+    } else {
+        lastVisitElement.textContent = 'This is your first visit!';
+    }
+}
 settings.lastVisit = new Date().toISOString();
 
 try {
