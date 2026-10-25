@@ -21,31 +21,116 @@ if (menuToggle && navLinks) {
 
 /*
  * Allows users to switch between the regular theme
- * and dark theme for a more comfortable viewing experience.
+ * and dark theme, saving their preference in Local Storage.
  */
 
 const themeToggle = document.querySelector('.theme-toggle');
+const settingsKey = 'portfolioSettings';
 
-if (themeToggle) {
-    // Set the button label based on the current theme.
-    if (document.body.classList.contains('dark-theme')) {
-        themeToggle.textContent = 'Light Mode';
-    } else {
-        themeToggle.textContent = 'Dark Mode';
-    }
+let settings = {
+    theme: 'light',
+    visitorName: '',
+    lastVisit: null
+};
 
-    // Allows users to customize the page theme for maximum viewing comfort.
-    themeToggle.addEventListener('click', function () {
-        document.body.classList.toggle('dark-theme');
+try {
+    const savedSettings = localStorage.getItem(settingsKey);
 
-        if (document.body.classList.contains('dark-theme')) {
-            themeToggle.textContent = 'Light Mode';
-        } else {
-            themeToggle.textContent = 'Dark Mode';
+    if (savedSettings !== null) {
+        const parsedSettings = JSON.parse(savedSettings);
+
+        if (
+            parsedSettings &&
+            typeof parsedSettings === 'object' &&
+            !Array.isArray(parsedSettings)
+        ) {
+            settings = {
+                ...settings,
+                ...parsedSettings
+            };
         }
-    });
+    }
+} catch (error) {
+    console.warn('Could not read saved settings. Using defaults.');
 }
 
+if (settings.theme === 'dark') {
+    document.documentElement.classList.add('dark-theme');
+} else {
+    document.documentElement.classList.remove('dark-theme');
+}
+
+function updateThemeButton() {
+    if (themeToggle) {
+        themeToggle.textContent =
+            settings.theme === 'dark' ? 'Light Mode' : 'Dark Mode';
+    }
+}
+
+updateThemeButton();
+/*
+ * Saves the visitor's name in the existing settings object.
+ */
+const visitorNameInput = document.querySelector('#visitor-name');
+const saveNameButton = document.querySelector('#save-name');
+const welcomeMessage = document.querySelector('#welcome-message');
+
+function updateWelcomeMessage() {
+    if (welcomeMessage) {
+        if (settings.visitorName) {
+            welcomeMessage.textContent =
+                `Welcome, ${settings.visitorName}! I am a Multimedia arts student. Feel free to connect with me professionally.`;
+        } else {
+            welcomeMessage.textContent =
+                'Welcome to my professional space! I am a Multimedia arts student.';
+        }
+    }
+}
+
+if (visitorNameInput && saveNameButton) {
+    visitorNameInput.value = settings.visitorName || '';
+
+    saveNameButton.addEventListener('click', function () {
+        settings.visitorName = visitorNameInput.value.trim();
+
+        try {
+            localStorage.setItem(
+                settingsKey,
+                JSON.stringify(settings)
+            );
+
+            updateWelcomeMessage();
+        } catch (error) {
+            console.warn('Could not save visitor name to Local Storage.');
+        }
+    });
+
+    updateWelcomeMessage();
+}
+
+if (themeToggle) {
+    themeToggle.addEventListener('click', function () {
+        settings.theme =
+            settings.theme === 'dark' ? 'light' : 'dark';
+
+        if (settings.theme === 'dark') {
+            document.documentElement.classList.add('dark-theme');
+        } else {
+            document.documentElement.classList.remove('dark-theme');
+        }
+
+        try {
+            localStorage.setItem(
+                settingsKey,
+                JSON.stringify(settings)
+            );
+        } catch (error) {
+            console.warn('Could not save settings to Local Storage.');
+        }
+
+        updateThemeButton();
+    });
+}
 /*
  * Displays portfolio content from an array so items can
  * be added or changed without hardcoding each item in HTML.
@@ -183,3 +268,18 @@ function handleContactSubmit(event) {
 if (contactForm) {
     contactForm.addEventListener('submit', handleContactSubmit);
 }
+
+
+/*
+ * Records the most recent visit in the saved settings.
+ */
+settings.lastVisit = new Date().toISOString();
+
+try {
+    localStorage.setItem(
+        settingsKey,
+        JSON.stringify(settings)
+    );
+    } catch (error) {
+    console.warn('Could not save last visit to Local Storage.');
+    }

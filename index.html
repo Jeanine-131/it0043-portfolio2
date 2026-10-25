@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
+    <script src="js/theme-init.js"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -15,9 +16,14 @@
         <h1>
             My Portfolio!
         </h1>
-        <p>
-            Welcome to my professional space! I am a Multimedia arts student.
+        <p id="welcome-message">
+           Welcome to my professional space! I am a Multimedia arts student.
         </p>
+        <div class="visitor-name">
+        <label for="visitor-name">Your name (optional):</label>
+        <input type="text" id="visitor-name" placeholder="Enter your name">
+        <button type="button" id="save-name">Save name</button>
+        </div>
     </header>
         <nav>
         <button type="button" class="menu-toggle" aria-expanded="false">
@@ -58,22 +64,6 @@
                     What I Do!
                 </h2>
                  <div id="dynamic-content"></div>
-                <article>
-                    <h3>
-                        Creating Visuals
-                    </h3>
-                    <p>
-                    I love to turn ideas into visual concepts!
-                </p>
-                </article>
-                <article>
-                    <h3>
-                        Learning and Improving
-                    </h3>
-                    <p>
-                        I am always eager to learn new techniques and improve my skills!
-                    </p>
-                </article>
                 
             </section>
         </main>
