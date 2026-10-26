@@ -8,17 +8,17 @@ The project includes four HTML pages, a shared CSS stylesheet, JavaScript functi
 
 Files are organized by their role in the project
 
-1. index.html, about.html, skills.html, and contact.html contain the website's page structure.
+1. HTML PAGES: index.html, about.html, skills.html, and contact.html contain the website's page structure.
 
-2. css/style.css contains shared styling, responsive layouts, and theme styles.
+2. CSS STYLESHEET: css/style.css contains shared styling, responsive layouts, and theme styles.
 
-3. js/theme-init.js restores the saved theme before the page fully loads.
+3. INITIALIZATION OF THEME: js/theme-init.js restores the saved theme before the page fully loads.
 
-4. js/script.js manages navigation, theme switching, user persistence, dynamic portfolio content, contact form validation, and last-visit recording.
+4. JAVASCRIPT: js/script.js manages navigation, theme switching, user persistence, dynamic portfolio content, contact form validation, and last-visit recording.
 
-5. assets/ contains the portfolio images.
+5. ASSSETS/IMAGES: assets/ contains the portfolio images.
 
-6. M6-structure.md documents the organization and cleanup.
+6. DOCUMENTATION: M6-structure.md documents the organization and cleanup.
 
 ///Cleanup and Naming////
 
