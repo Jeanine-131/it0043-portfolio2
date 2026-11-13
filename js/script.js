@@ -139,13 +139,13 @@ if (themeToggle) {
 const portfolioItems = [
     {
         title: 'Creating Visuals',
-        description: 'I love to turn ideas into visual concepts! (@ericathw_)',
-        image: 'assets/visuals.jpg'
+        description: 'I love to turn ideas into visual concepts!',
+        image: 'assets/Visuals.PNG'
     },
     {
         title: 'Learning and Improving',
-        description: 'I am always eager to learn new techniques and improve my skills! (@ericathw_)',
-        image: 'assets/visuals2.jpg'
+        description: 'I am always eager to learn new techniques and improve my skills!',
+        image: 'assets/Visuals2.PNG'
     }
 ];
 
