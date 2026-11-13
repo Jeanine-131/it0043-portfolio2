@@ -10,20 +10,24 @@
  - Skills and proficiency table.
  - Contact form with client-side validation and a success message.
  - Responsive navigation menu for different screen sizes.
+ - Visitor name, theme, and last visit are stored solely in the browser's Local Storage and are never transmitted to a server.
 ## Technologies
  - HTML5
  - CSS3
  - JavaScript
  - Browser Local Storage
 ## Setup
- - In order to view the website locally, do the following steps:
-  1. Download and extract the ZIP file.
-  2. Open the extracted folder.
-  3. Double-click index.html to launch it in your web browser.
+ To view the website locally, follow these steps:
 
+1. Open the project's GitHub repository: https://github.com/Jeanine-131/it0043-portfolio2
+2. Click the Code button.
+3. Select "Download ZIP."
+4. Extract the downloaded ZIP file.
+5. Open the extracted project folder.
+6. Double-click `index.html` to launch the website in your web browser.
 
-  -  The deployed website can also be accessed through the following link:
-     https://calara-portfolio.page.gd/
+The deployed website can also be accessed through the Live Demo link below.
+
 ## Live Demo URL
    https://calara-portfolio.page.gd/
 ## Screenshots
@@ -40,8 +44,9 @@
 ### Contact Page
 ![Contact Page](screenshots/CONTACT.PNG)
 ![Contact Page](screenshots/CONTACT1.PNG)
+
 ## Credits
-  - All written content, personal details, and project descriptions on the site were put together by the website creator.
+  - All featured artworks, written content, personal details, and project descriptions are original contributions by the website creator.
 ## AI use
  - AI assistance was used for the following purposes:
    1. AI was prompted to generate a deployment readiness checklist for the website. The generated checklist was reviewed, and each applicable item was personally checked and verified by the website owner.
