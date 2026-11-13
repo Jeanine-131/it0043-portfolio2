@@ -233,9 +233,9 @@ function handleContactSubmit(event) {
       showFieldError(email, 'Please enter your email address.');
       isValid = false;
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue)) {
-      showFieldError(email, 'Please enter a valid email address.');
-      isValid = false;
-    }
+    showFieldError(email, 'Please enter a valid email address.');
+    isValid = false;
+   }
 
     // phone no. validation
     if (phoneValue === '') {
